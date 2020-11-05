@@ -1,10 +1,12 @@
 <h1>Welcome</h1>
+<button type="button" class="btn btn-danger" *ngIf="isAuth" (click)="this.authService.removeUserInfo()" routerLink="">Logout</button>
 
 <table align="center">
-  <tr>
+  <tr *ngIf="!isAuth">
     <td><button type="button" class="btn btn-dark" routerLink="signup">Sign up</button>
     </td>
     <td><button type="button" class="btn btn-secondary" routerLink="login">Login</button>
     </td>
   </tr>
+  <tr *ngIf="isAuth"><h2>You are {{firstName}}</h2></tr>
 </table>

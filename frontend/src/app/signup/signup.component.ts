@@ -103,7 +103,7 @@ export class SignupComponent implements OnInit {
     newUser.password = password;
 
     this.httpClient
-      .post(this.auth.backend + 'api/user', newUser)
+      .post(this.auth.backend + 'api/auth/signup', newUser)
       .subscribe(
         (response) => {
           //Reception of the token which is set in the localStorage

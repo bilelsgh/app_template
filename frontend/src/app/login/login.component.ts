@@ -23,11 +23,12 @@ export class LoginComponent implements OnInit {
   onSignIn(mail: string, password: string) {
     /*Envoie du mail et mdp au backend et réception du token de l'user correspondant*/
     this.httpClient
-      .post(this.authService.backend + 'api/user/login', {mail: mail, password: password})
+      .post(this.authService.backend + 'api/auth/login', {mail: mail, password: password})
       .subscribe(
         (response) => {
           this.authService.setUserInfo( JSON.stringify(response['token']), 'token'); //stocke le token dans le session/localStorage
-          this.authService.setUserInfo( JSON.stringify(response['user']), 'user');
+          this.authService.setUserInfo( JSON.stringify(response['firstName']), 'user');
+          console.log(response['firstName']);
           this.router.navigate(['']);
         },
         (error) => {
@@ -50,11 +51,12 @@ export class LoginComponent implements OnInit {
   }
 
   testMail(mail:string){
-    for(let elt of mail){
+    /*for(let elt of mail){
       if(elt === '@'){
         return true;
       }
     }
-    return false;
+    return false;*/
+    return true;
   }
 }
