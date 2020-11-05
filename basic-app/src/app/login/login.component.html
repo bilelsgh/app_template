@@ -1,0 +1,29 @@
+<h1>Login</h1>
+<button type="button" class="btn btn-dark" routerLink="">Home</button>
+
+
+
+<form (ngSubmit)="onSubmit(f)" #f = "ngForm" >
+  <table align="center">
+    <!-- MAIL -->
+    <tr>
+      <label for="email">
+        Email
+      </label>
+      <input type="text" id="email" class="form-control" placeholder="name@example.com" #mail="ngModel" email ngModel>
+    </tr>
+
+    <!-- PASSWORD -->
+    <tr>
+      <label for="password">
+        Password
+      </label>
+      <input type="password" id="password" class="form-control" placeholder="Password" ngModel>
+    </tr>
+
+    <tr>
+      <button type="submit" class="btn btn-success">Login</button>
+    </tr>
+  </table>
+</form>
+
