@@ -13,5 +13,5 @@ In /backend :
   - jsonwebtoken
   - mangoose
   - mangoose-unique-validator
-  - 
+  - bodyParser
   
